@@ -1,4 +1,4 @@
-package yy.backend.java.concurrency.volatiles;
+package yy.backend.java.concurrency.keywords;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  *  这样每次读取stop的值时都会直接从主内存中读取，而不是从线程的本地内存。这样当主线程改变stop的值时，
  *  "Thread A"能立即看到这个改变，从而跳出循环。
  */
-public class VisibilityCase {
+public class Volatiles {
     // 可见性
     private static boolean stop = false;
 

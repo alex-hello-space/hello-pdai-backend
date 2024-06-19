@@ -1,4 +1,4 @@
-package yy.backend.java.concurrency.juc.Atomic;
+package yy.backend.java.concurrency.juc.atomic;
 
 import java.util.concurrent.atomic.AtomicStampedReference;
 
