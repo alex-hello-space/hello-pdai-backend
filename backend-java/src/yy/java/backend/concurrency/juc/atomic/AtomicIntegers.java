@@ -1,4 +1,4 @@
-package yy.backend.java.concurrency.juc.atomic;
+package yy.java.backend.concurrency.juc.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

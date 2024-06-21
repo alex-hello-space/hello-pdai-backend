@@ -1,4 +1,4 @@
-package yy.backend.java.concurrency.keywords;
+package yy.java.backend.concurrency.keywords;
 
 /**
  * @author yyHuangfu

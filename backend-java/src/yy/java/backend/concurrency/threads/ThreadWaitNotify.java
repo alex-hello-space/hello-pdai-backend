@@ -1,4 +1,4 @@
-package yy.backend.java.concurrency.threads;
+package yy.java.backend.concurrency.threads;
 
 /**
  * @author yyHuangfu

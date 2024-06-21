@@ -1,6 +1,6 @@
-package yy.backend.java.concurrency.juc.locks;
+package yy.java.backend.concurrency.juc.locks;
 
-import yy.backend.java.concurrency.threads.ThreadWaitNotify;
+import yy.java.backend.concurrency.threads.ThreadWaitNotify;
 
 import java.util.concurrent.locks.LockSupport;
 

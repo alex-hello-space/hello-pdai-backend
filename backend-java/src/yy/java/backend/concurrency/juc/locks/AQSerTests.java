@@ -1,4 +1,4 @@
-package yy.backend.java.concurrency.juc.locks;
+package yy.java.backend.concurrency.juc.locks;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

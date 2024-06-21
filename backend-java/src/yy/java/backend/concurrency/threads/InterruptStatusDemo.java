@@ -1,4 +1,4 @@
-package yy.backend.java.concurrency.threads;
+package yy.java.backend.concurrency.threads;
 
 public class InterruptStatusDemo {
     public static void main(String[] args) throws InterruptedException {
