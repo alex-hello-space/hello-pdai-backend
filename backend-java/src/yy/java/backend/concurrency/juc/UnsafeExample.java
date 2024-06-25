@@ -70,3 +70,44 @@ public class UnsafeExample {
         }
     }
 }
+
+/**
+ * park() 方法可以挂起当前线程，使其进入等待状态。它有两个参数，第一个参数是一个布尔值，表示是否要在等待时考虑线程的中断状态；
+ * 第二个参数是一个长整型值，表示等待的时间（单位是纳秒）。如果第一个参数为 true，那么在等待过程中如果线程被中断，park() 方法会立即返回。
+ * 如果第二个参数为 0，那么线程会无限期地等待，直到被 unpark() 方法唤醒。
+ */
+class UnsafeParkDemo {
+    private static Unsafe unsafe;
+
+    static {
+        try {
+            Field field = Unsafe.class.getDeclaredField("theUnsafe");
+            field.setAccessible(true);
+            unsafe = (Unsafe) field.get(null);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread thread = new Thread(() -> {
+            System.out.println("Thread is going to park");
+            unsafe.park(false, 0L); // Unsafe.park()方法不会释放任何锁!一般不和synchronized一起使用
+            System.out.println("Thread is unparked");
+        });
+
+        // 启动线程
+        thread.start();
+
+        try {
+            System.out.println("Main thread is going to sleep for 3s");
+            Thread.sleep(3000);
+            System.out.println("Main thread after sleep()");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Main thread is going to unpark the other thread");
+        unsafe.unpark(thread);
+    }
+}
